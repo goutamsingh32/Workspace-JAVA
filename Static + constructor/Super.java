@@ -61,3 +61,45 @@ public class Super {
           */
     }
 }
+
+
+
+
+/*
+ class A{
+
+    public A(){
+        sysout("A");            //print A
+    }
+    public A(int n){
+        sysout(" A int ");
+    }
+ }
+
+ class B extends A{
+    public B(){                     // super() is present by default so call line no. 71
+        sysout("B");
+    }
+
+    public B(int B){
+        this();                      //call line no. 80.
+        sysout("B int");
+    }
+ }
+
+    main(){
+        B obj = new B(4);           // call line no. 84
+    }
+
+    output :-
+
+        A
+        B
+        B int
+ */
+
+
+
+
+
+
