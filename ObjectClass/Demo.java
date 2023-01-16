@@ -1,5 +1,4 @@
-// package ObjectClass;
-
+package ObjectClass;
 // in case of object clas try to use source action more it gives much bettter idea about result.
 class Laptop{
     String model;
