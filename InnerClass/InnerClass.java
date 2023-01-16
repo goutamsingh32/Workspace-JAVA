@@ -1,4 +1,4 @@
-// package InnerClass;
+package InnerClass;
 
 class A{
     public void show1(){
