@@ -1,4 +1,4 @@
-package Enum;
+// package Enum;
 
 enum Status{
     Running, Failed, Pending, Success;
@@ -10,12 +10,13 @@ public class Enum {
     
         Status s = Status.Running;
         System.out.println(s);   // Running
-
+        
         System.out.println(s.ordinal());  //0 ->as based on 0-Indexing
 
         Status[] ss = Status.values();  //gives an array of all values of Status
 
-
+        System.out.println(s.getClass());       //output -> class Status
+        System.out.println(s.getClass().getSuperclass());   //output -> class java.lan.Enum
         if(s==Status.Running){
             System.out.println("All good");
         }
