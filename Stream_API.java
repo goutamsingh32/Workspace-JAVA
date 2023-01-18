@@ -1,5 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class Stream_API {
@@ -41,6 +43,45 @@ public class Stream_API {
         int result = s3.reduce(0,(c,e) -> c+e); //reduce not give stream it gives integer
 
         System.out.println(result);
+
+        int res = nums.stream()
+            .filter(n -> n%2==0)
+            .map(n -> n*2)
+            .reduce(0,(c,e) -> c+e);
+
+        System.out.println(res);
+
+
+        // The way filter works...
+        Predicate<Integer> p = new Predicate<Integer>() {
+
+            @Override
+            public boolean test(Integer t) {
+                if(t%2==0)return true;
+                return false;
+            }
+        };
+        s3.filter(p);
+
+        //the way map works
+
+        Function<Integer,Integer> fun = new Function<Integer,Integer>() {
+
+            @Override
+            public Integer apply(Integer t) {
+                // TODO Auto-generated method stub.
+                return t*2;
+            }
+        };
+
+        // s3.map(fun);
+
+        Stream<Integer> sortedValues = nums.stream()  // we can use nums.parallelStream in case of multple thread.
+                                        .filter(n -> n%2==0)
+                                        .sorted();          // cant use parallel stream and sort together
+        sortedValues.forEach(n->System.out.println(n));
+
+
 
     }
 }
